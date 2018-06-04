@@ -11,13 +11,11 @@ import java.util.logging.Logger;
 
 @RestController
 public class HelloController {
-    private final Logger logger=Logger.getLogger(getClass().toString());
     @Autowired
     private DiscoveryClient discoveryClient;
     @RequestMapping(value="/hello",method= RequestMethod.GET)
     public String index(){
         ServiceInstance instance=discoveryClient.getLocalServiceInstance();
-        logger.info("/hello,host:"+instance.getHost()+",service_id:"+instance.getServiceId());
         return "Hello World";
     }
 }
