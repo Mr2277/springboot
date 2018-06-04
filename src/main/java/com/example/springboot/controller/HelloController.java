@@ -16,6 +16,7 @@ public class HelloController {
     @RequestMapping(value="/hello",method= RequestMethod.GET)
     public String index(){
         ServiceInstance instance=discoveryClient.getLocalServiceInstance();
+        System.out.println("dddddddddddddddddddddddddd");
         return "Hello World";
     }
 }
